@@ -1,0 +1,34 @@
+{
+    "name": "resumev2",
+    "version": "1.0.0",
+    "description": "my resume",
+    "main": "index.html",
+    "author": "Dave Pisek",
+    "license": "MIT",
+    "private": true,
+    "scripts": {
+        "start": "parcel index.pug"
+    },
+    "devDependencies": {
+        "autoprefixer": "^9.4.7",
+        "parcel-bundler": "^1.11.0",
+        "postcss-custom-media": "^7.0.7",
+        "postcss-normalize": "^7.0.1",
+        "pug": "^2.0.3"
+    },
+    "postcss": {
+        "plugins": {
+            "postcss-normalize": true,
+            "postcss-custom-media": true,
+            "autoprefixer": {
+                "browsers": [
+                    ">1%",
+                    "last 4 versions",
+                    "Firefox ESR",
+                    "not ie < 9"
+                ],
+                "flexbox": "no-2009"
+            }
+        }
+    }
+}

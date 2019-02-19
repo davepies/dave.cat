@@ -1,0 +1,81 @@
+@import-normalize;
+
+/*
+ * ────────────────────────────────────────────────────────────────────────── I ──────────
+ *   :::::: M A I N   A N D   O N L Y   C S S : :  :   :    :     :        :          :
+ * ────────────────────────────────────────────────────────────────────────────────────
+ */
+
+/*
+ * ─── ANCHOR VARIABLES ───────────────────────────────────────────────────────────
+ */
+
+@custom-media --narrow-window (max-width: 30em);
+
+:root {
+    --color-primary: blue;
+    --color-secondary: red;
+    --color-background: yellow;
+    --font-size: 13px;
+    --font-stack: Arial;
+}
+
+/*
+ * ─── ANCHOR GENERAL ─────────────────────────────────────────────────────────────
+ */
+
+body {
+    margin: 0;
+    background: var(--color-background);
+    font-size: var(--font-size);
+    font-family: var(--font-stack);
+}
+
+h1 {
+    font-size: calc(var(--font-size) * 4);
+}
+
+/*
+ * ─── ANCHOR CONTAINER ───────────────────────────────────────────────────────────
+ */
+
+.container {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 1rem 1fr 1fr 2fr 1rem;
+    grid-template-rows: 1rem min-content auto 1rem;
+}
+
+/*
+ * ─── ANCHOR BANNER ──────────────────────────────────────────────────────────────
+ */
+
+.banner {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 2;
+
+    background: var(--color-secondary);
+}
+@media (--narrow-window) {
+    .banner {
+        background: pink;
+        grid-row-start: 6;
+        grid-row-end: 8;
+    }
+}
+
+.main {
+    grid-column-start: 2;
+    grid-column-end: 5;
+
+    grid-row-start: 3;
+    grid-row-end: 3;
+
+    background: var(--color-primary);
+}
