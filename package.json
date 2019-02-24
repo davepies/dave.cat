@@ -1,7 +1,7 @@
 {
-    "name": "resumev2",
+    "name": "grid-playground",
     "version": "1.0.0",
-    "description": "my resume",
+    "description": "CSS grids are here!",
     "main": "index.html",
     "author": "Dave Pisek",
     "license": "MIT",
