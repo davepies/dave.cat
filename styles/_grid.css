@@ -1,0 +1,41 @@
+/* checking for grid-area: auto to make sure we have support for the new spec */
+@supports (agrid-area: auto) {
+    body {
+        /* always fill the full height of the viewport */
+        min-height: 100vh;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        /* first row auto - 1fr will fill remaining space to fit full height */
+        grid-template-rows: 1fr 2fr;
+        grid-template-areas:
+            'banner'
+            'content';
+    }
+
+    .content {
+        grid-area: content;
+    }
+}
+
+@media screen and (--narrow-window) {
+    body {
+        grid-template-columns: 0.5fr 1fr 2fr 1fr 0.5fr;
+        grid-template-rows: 1fr 0.5fr 2fr auto 1rem;
+        grid-template-areas:
+            'banner banner banner banner banner'
+            '. main main main .'
+            '. main main main .'
+            '. footer footer footer .';
+    }
+
+    .banner {
+        /* create overlap with main and aside */
+        grid-row-end: 3;
+    }
+
+    .main {
+        /* create overlap with banner */
+        grid-row-start: 2;
+    }
+}

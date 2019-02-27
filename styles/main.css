@@ -1,0 +1,99 @@
+/*
+ * ─── MAIN ──────────────────────────────────────────────────────────────
+ */
+
+@import-normalize;
+
+@import './_variables.css';
+@import './_grid.css';
+
+body {
+    font-size: var(--font-size);
+    font-family: var(--font-stack);
+
+    color: var(--clr-font-color-dark);
+
+    margin: 0 auto;
+}
+
+/* links */
+a {
+    text-decoration: none;
+    border-bottom: 1px solid;
+}
+a:hover {
+    background: var(--clr-gradient-link-hover);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* headings */
+h1 {
+    font-size: calc(var(--font-size) * 2);
+}
+
+/* content items */
+body > * {
+    padding: 2rem;
+}
+
+.banner {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+
+    min-height: 20vh;
+
+    color: var(--clr-font-color-dark);
+    background: var(--clr-background-light);
+}
+
+.main {
+    background: var(--clr-content-box-background);
+    color: var(--clr-font-color);
+}
+
+.banner,
+.main,
+.footer {
+    /* TODO: put into variable */
+    max-width: 80em;
+    margin: 0 auto;
+}
+
+/* pillars */
+.pillars {
+    /* display: flex;
+    min-height: 10vh;
+    justify-content: space-around;
+    align-content: stretch; */
+    list-style: none;
+    padding: 0;
+}
+
+.pillars li {
+    background: var(--clr-background-light);
+}
+
+/* footer links */
+.footer__links {
+    display: flex;
+    justify-content: space-between;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+@media screen and (--narrow-window) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    .pillars {
+        display: flex;
+        min-height: 10vh;
+        justify-content: space-around;
+        align-content: stretch;
+    }
+}
