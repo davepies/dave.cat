@@ -3,30 +3,32 @@ doctype html
 html(lang="en")
 
     head
-        title dave.🐈
+        title dave /ᐠ｡ꞈ｡ᐟ\ 
         meta(http-equiv="Content-Type", content="text/html;charset=UTF-8")
         link(rel="stylesheet", href="styles/main.css")
+        script(src="scripts/index.js" async="async")
 
     body
         header.banner
             h1.banner__heading 
-                | Legit Front-end Developer, wannabe Backend contributer &amp; well trained cat servant
+                | Legit Front-end Developer, wannabe Back-ender &amp; well trained cat servant
             p.banner__sub-heading
-                | I enjoy building UIs using CSS, HTML and React.
+                | I enjoy building UIs and the stuff behind.
+            div.cat(aria-hidden="true")
 
         main.main
             section.intro
+                h1.intro__heading Tools of trade
                 ul.pillars
-                    li a11y
-                    li testing
-                    li something else
-            
+                    each val in ['CSS', 'HTML', 'JS', 'React', 'Node', 'Webpack', 'Cypress', 'Emotion', 'Enzyme', 'Jest']
+                        li= val
+
         footer.footer
             nav
                 ul.footer__links
                     li 
-                        a(href='#') linkedin
+                        a(href='#', target="_blank") linkedin
                     li 
-                        a(href='#') twitter
+                        a(href='#', target="_blank") twitter
                     li 
-                        a(href='#') github
+                        a(href='#', target="_blank") github
