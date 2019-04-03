@@ -1,13 +1,18 @@
 /* globals window */
 
 (function (global, document) {
-
     const catify = (el, prefix = '', maxCycles = Infinity) => {
-        const frames = ['/ᐠ｡ꞈ｡ᐟ\\', '/ᐠ｡ꞈ_ᐟ\\', '/ᐠ_ꞈ_ᐟ\\', '/ᐠ｡ꞈ_ᐟ\\', '/ᐠ_ꞈ_ᐟ\\'];
+        const frames = [
+            '/ᐠ｡ꞈ｡ᐟ\\',
+            '/ᐠ｡ꞈ_ᐟ\\',
+            '/ᐠ_ꞈ_ᐟ\\',
+            '/ᐠ｡ꞈ_ᐟ\\',
+            '/ᐠ_ꞈ_ᐟ\\'
+        ];
         let runsDone = 0;
         let cyclesDone = 0;
 
-        const cycleFrames = (frames) => {
+        const cycleFrames = frames => {
             let currentFrameIndex = 0;
 
             const nextFrame = () => {
@@ -27,7 +32,7 @@
 
         const cycler = cycleFrames(frames);
 
-        const toggleFrame =  () => {
+        const toggleFrame = () => {
             el.textContent = `${prefix} ${cycler.nextFrame()}`;
             const timeToNextRun = Math.random() * (2000 - 500) + 500;
 
@@ -50,24 +55,36 @@
             const { target } = e;
             if (target.matches('.pillars li')) {
                 target.classList.add('animated');
-                target.addEventListener('animationend', e => {
-                    e.target.classList.remove('animated');
-                }, { once: true });
+                target.addEventListener(
+                    'animationend',
+                    e => {
+                        e.target.classList.remove('animated');
+                    },
+                    { once: true }
+                );
             }
         });
     };
 
-    const onDOMContentLoaded = doc => () => {
-        addAwesomeEventListeners(doc);
-
+    const onDOMContentLoaded = () => {
+        addAwesomeEventListeners(document);
         catify(document.querySelector('title'), 'dave');
         catify(document.querySelector('.cat'), '', 2);
     };
 
-    // https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded
-    document.addEventListener(
-        'DOMContentLoaded',
-        onDOMContentLoaded(document),
-        false
-    );
+    if (
+        document.readyState === 'complete' ||
+        document.readyState === 'loaded' ||
+        document.readyState === 'interactive'
+    ) {
+        onDOMContentLoaded();
+    } else {
+        // https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded
+        document.addEventListener(
+            'DOMContentLoaded',
+            onDOMContentLoaded,
+            false
+        );
+    }
+
 })(window, window.document, window.anime);
