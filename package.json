@@ -1,13 +1,15 @@
 {
-    "name": "grid-playground",
+    "name": "dave.cat",
     "version": "1.0.0",
-    "description": "CSS grids are here!",
+    "description": "'/ᐠ｡ꞈ｡ᐟ\\'",
     "main": "index.html",
     "author": "Dave Pisek",
     "license": "MIT",
     "private": true,
     "scripts": {
-        "start": "parcel index.pug"
+        "start": "parcel index.pug",
+        "build": "parcel build --public-url '.' index.pug",
+        "now-build": "npm run build"
     },
     "devDependencies": {
         "autoprefixer": "^9.4.7",
@@ -30,7 +32,7 @@
         "plugins": {
             "postcss-import": true,
             "postcss-normalize": true,
-            "postcss-preset-env": true, 
+            "postcss-preset-env": true,
             "postcss-custom-media": true,
             "autoprefixer": {
                 "flexbox": "no-2009"
