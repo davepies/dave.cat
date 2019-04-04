@@ -9,17 +9,24 @@
     "scripts": {
         "start": "parcel index.pug",
         "build": "parcel build  index.pug --no-source-maps --public-url '.'",
-        "now-build": "npm run build"
+        "test": "tape -r esm -r './test.setup' scripts/**.test.js | faucet",
+        "now-build": "npm run test && npm run build"
     },
     "devDependencies": {
+        "@babel/core": "^7.4.3",
         "autoprefixer": "^9.4.7",
+        "browser-env": "^3.2.6",
+        "esm": "^3.2.22",
+        "faucet": "^0.0.1",
         "parcel-bundler": "^1.11.0",
+        "parcel-plugin-inliner": "^1.0.7",
         "postcss-custom-media": "^7.0.7",
         "postcss-custom-properties": "^8.0.9",
         "postcss-import": "^12.0.1",
         "postcss-normalize": "^7.0.1",
         "postcss-preset-env": "^6.5.0",
-        "pug": "^2.0.3"
+        "pug": "^2.0.3",
+        "tape": "^4.10.1"
     },
     "browserslist": [
         ">1%",
@@ -38,8 +45,5 @@
                 "flexbox": "no-2009"
             }
         }
-    },
-    "dependencies": {
-        "parcel-plugin-inliner": "^1.0.7"
     }
 }
