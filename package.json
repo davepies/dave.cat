@@ -8,7 +8,7 @@
     "private": true,
     "scripts": {
         "start": "parcel index.pug",
-        "build": "parcel build --public-url '.' index.pug",
+        "build": "parcel build  index.pug --no-source-maps --public-url '.'",
         "now-build": "npm run build"
     },
     "devDependencies": {
@@ -38,5 +38,8 @@
                 "flexbox": "no-2009"
             }
         }
+    },
+    "dependencies": {
+        "parcel-plugin-inliner": "^1.0.7"
     }
 }

@@ -1951,6 +1951,11 @@ fast-levenshtein@~2.0.4:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz#3d8a5c66883a16a30ca8643e851f19baa7797917"
 
+file-type@^10.4.0:
+  version "10.10.0"
+  resolved "https://registry.yarnpkg.com/file-type/-/file-type-10.10.0.tgz#b7cbc8ec48871edd7a3629e0a6d01b2b80a4d56c"
+  integrity sha512-3CTQE/db3dnK2jsfd4XiXMKw9nD0QVEMRLdBzqYDRr5BvYMUccDpP8hMc1uPb1VZ9Iw/cAJjYPNwJ5UzxGqsRg==
+
 filesize@^3.6.0:
   version "3.6.1"
   resolved "https://registry.yarnpkg.com/filesize/-/filesize-3.6.1.tgz#090bb3ee01b6f801a8a8be99d31710b3422bb317"
@@ -1995,6 +2000,11 @@ fs-minipass@^1.2.5:
 fs.realpath@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/fs.realpath/-/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
+
+fse@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/fse/-/fse-4.0.1.tgz#9e1db80203933cbe59ed75507f35adf2689ce1e9"
+  integrity sha512-5XLUrweQvJxSJKhBe3XjimHSJ2EUhYOG+K2tLQy8I9kp78Fa3CgUXqxAZWxE9+fsvnI5GVkHl4NDqbf1tSb93Q==
 
 fsevents@^1.2.7:
   version "1.2.7"
@@ -3101,6 +3111,13 @@ parcel-bundler@^1.11.0:
     v8-compile-cache "^2.0.0"
     ws "^5.1.1"
 
+parcel-plugin-inliner@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/parcel-plugin-inliner/-/parcel-plugin-inliner-1.0.7.tgz#d66270bea1bd05f05c0128d266f0d3de9c18babf"
+  integrity sha512-gPvo6plSxa1kgAO0auKzpc/A9yIMN59KedaSqMRWAZ4mL3yoTuJkU4umoHdQNcdlxQxEZMaR6O1/BNrCfnOBYA==
+  dependencies:
+    posthtml-inline-assets "^3.0.0"
+
 parse-asn1@^5.0.0:
   version "5.1.4"
   resolved "https://registry.yarnpkg.com/parse-asn1/-/parse-asn1-5.1.4.tgz#37f6628f823fbdeb2273b4d540434a22f3ef1fcc"
@@ -3892,6 +3909,14 @@ postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.14, postcss@^7.0.2, postcss@^7.0.5,
     chalk "^2.4.2"
     source-map "^0.6.1"
     supports-color "^6.1.0"
+
+posthtml-inline-assets@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/posthtml-inline-assets/-/posthtml-inline-assets-3.0.0.tgz#fd3c7c278a610f162fbb0c82e8fd8178ca1685d3"
+  integrity sha512-CEFG5YA+JRoIcLYpQNU6z5rFm8FD/97Ikuj0UIsaJP2DqFwqVsIVvQe6mFHiSncouqY1c9j8c7wOd5g57jdAJw==
+  dependencies:
+    file-type "^10.4.0"
+    fse "^4.0.1"
 
 posthtml-parser@^0.3.3:
   version "0.3.3"
